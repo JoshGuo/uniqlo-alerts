@@ -51,8 +51,6 @@ var newSales = 0;
 
         prevRecord[name] = saleprice;
     });
-    
-    console.log(string);
 
     fs.writeFileSync('data.json', JSON.stringify(prevRecord), (err) => {
         if(err) console.log(err)
@@ -60,13 +58,18 @@ var newSales = 0;
 
 
     if(sendMessage && newSales > 0) {
+        console.log('NEW SALES FOUND...SENDING MESSAGE');
+        console.log(string)
+
         let msg = await twilio.messages.create({
             body: string,
             from: process.env.TWILIO_FROM_NUMBER,
             to: process.env.TWILIO_TO_NUMBER
-        })
+        });
         
-        console.log(msg.sid);
+        console.log('MESSAGE SENT: ' + msg.sid);
+    }else {
+        console.log('NO SALES FOUND');
     }
 
     process.exit();
