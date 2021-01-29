@@ -5,7 +5,7 @@ const mongodb = require('mongodb').MongoClient;
 
 require('dotenv').config();
 
-const sendMessage = false;
+const sendMessage = true;
 const twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 const url = 'https://www.uniqlo.com/us/en/men-supima%C2%A9-cotton-crew-neck-short-sleeve-t-shirt-422990.html'
 
