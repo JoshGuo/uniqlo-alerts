@@ -21,6 +21,7 @@
     "cross-fetch": "^3.0.6",
     "dotenv": "^8.2.0",
     "jsdom": "^16.4.0",
+    "mongodb": "^3.6.3",
     "node-fetch": "^2.6.1",
     "twilio": "^3.55.1"
   }
